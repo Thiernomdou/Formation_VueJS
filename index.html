@@ -20,11 +20,21 @@
         <p>{{ presentation() }}</p>
         <a v-bind:href="URLVueJS">Le site de VUE JS</a>
         <img v-bind:src="URLImg"> -->
-        <button v-on:click="augmente">Augmente</button>
+        <!-- <button v-on:click="augmente">Augmente</button>
         <button v-on:click="baisse">Baisse</button>
         <h2>Compteur : {{ compteur }}</h2>
         <canvas v-on:mousemove="coords"></canvas>
-        <p>{{ x }} / {{ y }}</p>
+        <p>{{ x }} / {{ y }}</p> -->
+        <div v-on:click="foo">
+            <p> lorem ipsum
+                <button v-on:click.stop="foo">clique moi</button>
+            </p>
+        </div>
+
+        <form v-on:click.prevent="onSubmit">
+            <button>Valider</button>
+        </form>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -37,24 +47,27 @@
             // nb : 10,
             // URLVueJS : 'https://vuejs.org/v2/guide/instance.html#Data-and-Methods',
             // URLImg : 'https://plus.unsplash.com/premium_photo-1670176446887-d3e9aa7ecc61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80'
-            compteur : 0,
-            x : 0,
-            y : 0
+            // compteur : 0,
+            // x : 0,
+            // y : 0
+            foo : function() {
+                console.log("cliqué");
+            }
         },
         methods: {
             // presentation: function() {
             //     return this.txt + this.nb;
             // }
-            augmente : function() {
-                this.compteur++;
-            },
-            baisse : function() {
-                this.compteur--;
-            },
-            coords : function(e) {
-                this.x = e.offsetX;
-                this.y = e.offsetY;
-            }
+            // augmente : function() {
+            //     this.compteur++;
+            // },
+            // baisse : function() {
+            //     this.compteur--;
+            // },
+            // coords : function(e) {
+            //     this.x = e.offsetX;
+            //     this.y = e.offsetY;
+            // }
         }
     })        
 
