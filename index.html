@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formation VueJS</title>
+</head>
+<body>
+    <div id="mon-app">
+        <h1>Vue JS cours</h1>
+        <p>{{ txt }}</p>
+        <p>{{ presentation() }}</p>
+        <a v-bind:href="URLVueJS">Le site de VUE JS</a>
+        <img v-bind:src="URLImg">
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+
+    new Vue({
+        el: '#mon-app',
+        data: {
+            txt : 'Hello world',
+            nb : 10,
+            URLVueJS : 'https://vuejs.org/v2/guide/instance.html#Data-and-Methods',
+            URLImg : 'https://plus.unsplash.com/premium_photo-1670176446887-d3e9aa7ecc61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80'
+        },
+        methods: {
+            presentation: function() {
+                return this.txt + this.nb;
+            }
+        }
+    })        
+
+    </script>
+</body>
+</html>
