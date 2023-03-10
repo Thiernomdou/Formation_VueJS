@@ -25,7 +25,7 @@
         <h2>Compteur : {{ compteur }}</h2>
         <canvas v-on:mousemove="coords"></canvas>
         <p>{{ x }} / {{ y }}</p> -->
-        <div v-on:click="foo">
+        <!-- <div v-on:click="foo">
             <p> lorem ipsum
                 <button v-on:click.stop="foo">clique moi</button>
             </p>
@@ -33,7 +33,9 @@
 
         <form v-on:click.prevent="onSubmit">
             <button>Valider</button>
-        </form>
+        </form> -->
+        <p>Ton nom</p>
+        <input type="text" v-on:keyup.enter="inpFunc">
 
     </div>
 
@@ -65,8 +67,11 @@
             //     this.x = e.offsetX;
             //     this.y = e.offsetY;
             // }
-            foo : function() {
-                console.log("cliqué");
+            // foo : function() {
+            //     console.log("cliqué");
+            // }
+            inpFunc : function() {
+                console.log("Tu as appuyé sur une touche");
             }
         }
     })        
