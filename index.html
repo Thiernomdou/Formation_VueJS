@@ -80,6 +80,14 @@
             //     console.log("cliqué");
             // }
         },
+        watch : {
+            compteurA : function() {
+                var ctx = this;
+                setTimeout(function() {
+                    ctx.compteurA = 0;
+                }, 1500)
+            }
+        },
         computed : {
             memo : function () {
                 console.log("MEMO s'est lancée");
