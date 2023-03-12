@@ -35,7 +35,8 @@
             <button>Valider</button>
         </form> -->
         <p>Ton nom</p>
-        <input type="text" v-on:keyup.enter="inpFunc">
+        <input type="text" v-model="valeur">
+        <p>{{ valeur }}</p>
 
     </div>
 
@@ -52,6 +53,8 @@
             // compteur : 0,
             // x : 0,
             // y : 0
+            valeur : ""
+
         },
         methods: {
             // presentation: function() {
@@ -70,9 +73,6 @@
             // foo : function() {
             //     console.log("cliqué");
             // }
-            inpFunc : function() {
-                console.log("Tu as appuyé sur une touche");
-            }
         }
     })        
 
