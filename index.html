@@ -6,13 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formation VueJS</title>
 </head>
-<style>
-    canvas {
-        width: 300px;
-        height: 200px;
-        border: 1px solid #fff;
-    }
-</style>
 <body>
     <div id="mon-app">
         <!-- <h1>Vue JS cours</h1>
@@ -20,10 +13,14 @@
         <p>{{ presentation() }}</p>
         <a v-bind:href="URLVueJS">Le site de VUE JS</a>
         <img v-bind:src="URLImg"> -->
-        <!-- <button v-on:click="augmente">Augmente</button>
+        <button v-on:click="augmente">Augmente</button>
         <button v-on:click="baisse">Baisse</button>
-        <h2>Compteur : {{ compteur }}</h2>
-        <canvas v-on:mousemove="coords"></canvas>
+        <h2>Compteur : {{ compteurA }}</h2>
+        <p>{{ checkValeur() }} |||| {{ memo }}</p>
+
+        <button v-on:click="augmenteB">Augmente</button>
+        <p>{{ compteurB }}</p>
+        <!-- <canvas v-on:mousemove="coords"></canvas>
         <p>{{ x }} / {{ y }}</p> -->
         <!-- <div v-on:click="foo">
             <p> lorem ipsum
@@ -34,9 +31,9 @@
         <form v-on:click.prevent="onSubmit">
             <button>Valider</button>
         </form> -->
-        <p>Ton nom</p>
+        <!-- <p>Ton nom</p>
         <input type="text" v-model="valeur">
-        <p>{{ valeur }}</p>
+        <p>{{ valeur }}</p> -->
 
     </div>
 
@@ -50,22 +47,31 @@
             // nb : 10,
             // URLVueJS : 'https://vuejs.org/v2/guide/instance.html#Data-and-Methods',
             // URLImg : 'https://plus.unsplash.com/premium_photo-1670176446887-d3e9aa7ecc61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=736&q=80'
-            // compteur : 0,
+            compteurA : 0,
+            compteurB : 0,
             // x : 0,
             // y : 0
-            valeur : ""
+            // valeur : ""
 
         },
         methods: {
             // presentation: function() {
             //     return this.txt + this.nb;
             // }
-            // augmente : function() {
-            //     this.compteur++;
-            // },
-            // baisse : function() {
-            //     this.compteur--;
-            // },
+            augmente : function() {
+                this.compteurA++;
+            },
+            
+            baisse : function() {
+                this.compteurA--;
+            },
+            checkValeur : function() {
+                console.log("La fonction s'est lancée");
+                return this.compteurA > 10 ? 'Supérieur à 10' : 'Inférieur à 10'
+            },
+            augmenteB : function() {
+                this.compteurB++;
+            },
             // coords : function(e) {
             //     this.x = e.offsetX;
             //     this.y = e.offsetY;
@@ -73,6 +79,12 @@
             // foo : function() {
             //     console.log("cliqué");
             // }
+        },
+        computed : {
+            memo : function () {
+                console.log("MEMO s'est lancée");
+                return this.compteurA > 10 ? 'Supérieur à 10' : 'Inférieur à 10'
+            }
         }
     })        
 
