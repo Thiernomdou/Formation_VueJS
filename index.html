@@ -55,7 +55,10 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ea.</p>
         </template> -->
         <ul>
-            <li v-for="number in tableau">{{ number }}</li>
+            <li v-for="(fruit, index) in tableauFruits">{{ index }}  {{ fruit }}</li>
+        </ul>
+        <ul>
+            <li v-for="(val, props) in objetChat">{{ props }}  {{ val }}</li>
         </ul>
     </div>
 
@@ -76,7 +79,12 @@
             // valeur : ""
             // num : 4,
             // toggleBox : true,
-            tableau : [1,2,3,4,5]
+            tableauFruits : ["Fraise", "Banane", "Mangue"],
+            objetChat : {
+                race : "Persan",
+                age : 3,
+                poids : "3kg"
+            }
         },
        
         // methods: {
