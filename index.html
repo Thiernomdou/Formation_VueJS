@@ -47,10 +47,13 @@
         <!-- <p>Ton nom</p>
         <input type="text" v-model="valeur">
         <p>{{ valeur }}</p> -->
-        <button @click="toggleColor = !toggleColor">Toggle la couleur</button>
-        <div :class="[objCSS, toggleColor ? 'bordure' : '']"></div>
-        <p :style="monStyle">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, ducimus.</p>
-
+        <button @click="toggleBox = !toggleBox">Toggle la Box</button>
+        <template v-if="toggleBox">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ea.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ea.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ea.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ea.</p>
+        </template>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -68,25 +71,10 @@
             // x : 0,
             // y : 0
             // valeur : ""
-            toggleColor : false,
-            color : 'lightblue',
-            width : 200
-
+            num : 4,
+            toggleBox : true,
         },
-        computed :  {
-            objCSS : function() {
-                return {
-                    red : this.toggleColor,
-                    box : true
-                }
-            },
-            monStyle : function() {
-                return {
-                    backgroundColor : this.color,
-                    width : this.width + "px"
-                }
-            }
-        }
+       
         // methods: {
             // presentation: function() {
             //     return this.txt + this.nb;
