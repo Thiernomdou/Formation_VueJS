@@ -47,13 +47,16 @@
         <!-- <p>Ton nom</p>
         <input type="text" v-model="valeur">
         <p>{{ valeur }}</p> -->
-        <button @click="toggleBox = !toggleBox">Toggle la Box</button>
-        <template v-if="toggleBox">
+        <!-- <button @click="toggleBox = !toggleBox">Toggle la Box</button> -->
+        <!-- <template v-if="toggleBox">
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ea.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ea.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ea.</p>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus, ea.</p>
-        </template>
+        </template> -->
+        <ul>
+            <li v-for="number in tableau">{{ number }}</li>
+        </ul>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -71,8 +74,9 @@
             // x : 0,
             // y : 0
             // valeur : ""
-            num : 4,
-            toggleBox : true,
+            // num : 4,
+            // toggleBox : true,
+            tableau : [1,2,3,4,5]
         },
        
         // methods: {
